@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "wknd6_A_BiddingWars"
