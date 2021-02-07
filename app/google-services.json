@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:859531998998:android:6e1d8949fbd34c86ea4237",
         "android_client_info": {
-          "package_name": "om.aoinc.wknd6_a_biddingwars"
+          "package_name": "com.aoinc.wknd6_a_biddingwars"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "859531998998-6q3caq0q1knjbbrvipp50ma8kat7d4oq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "om.aoinc.wknd6_a_biddingwars",
+            "package_name": "com.aoinc.wknd6_a_biddingwars",
             "certificate_hash": "8b2f4276fc5285c03317e38ad7fdb8622bf8608c"
           }
         },
