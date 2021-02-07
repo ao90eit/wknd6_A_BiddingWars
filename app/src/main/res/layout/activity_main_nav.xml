@@ -4,7 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainNav.MainNavActivity"
-    android:background="@color/teal_200">
+    tools:context=".view.MainNav.MainNavActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/main_nav_viewPager2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/main_nav_bottomNavigationView" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/main_nav_bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/main_nav_page_menu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
