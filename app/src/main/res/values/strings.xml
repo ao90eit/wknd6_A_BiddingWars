@@ -11,4 +11,6 @@
     <string name="password_empty_message">Please input password</string>
     <string name="unkown_login_error">Unknown error signing in</string>
     <string name="verify_email_message">You must verify your email</string>
+    <string name="num_bids_display">Bids: %d</string>
+    <string name="top_bidder_display">Top Bidder: %s</string>
 </resources>
