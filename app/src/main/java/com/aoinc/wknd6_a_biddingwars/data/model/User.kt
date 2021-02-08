@@ -1,4 +1,4 @@
-package com.aoinc.wknd6_a_biddingwars.data
+package com.aoinc.wknd6_a_biddingwars.data.model
 
 data class User(
     private val name: String,

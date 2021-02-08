@@ -14,4 +14,11 @@
         app:spanCount="3"
         tools:listitem="@layout/auction_item_layout" />
 
+    <Button
+        android:id="@+id/test_push_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Publish test data"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

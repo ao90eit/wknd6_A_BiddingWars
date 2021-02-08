@@ -2,13 +2,18 @@ package com.aoinc.wknd6_a_biddingwars.view.MainNav
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.aoinc.wknd6_a_biddingwars.R
 import com.aoinc.wknd6_a_biddingwars.view.MainNav.adapter.MainFragmentsAdapter
+import com.aoinc.wknd6_a_biddingwars.viewmodel.AuctionViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainNavActivity : AppCompatActivity() {
+
+    // View model
+    private val auctionViewModel: AuctionViewModel by viewModels()
 
     // Layout views
     private lateinit var viewPager: ViewPager2

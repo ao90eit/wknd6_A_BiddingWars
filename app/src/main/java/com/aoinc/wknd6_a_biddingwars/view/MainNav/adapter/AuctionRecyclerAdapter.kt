@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.aoinc.wknd6_a_biddingwars.R
-import com.aoinc.wknd6_a_biddingwars.data.AuctionItem
+import com.aoinc.wknd6_a_biddingwars.data.model.AuctionItem
 import com.bumptech.glide.Glide
 
 class AuctionRecyclerAdapter(private var itemList: MutableList<AuctionItem>) : RecyclerView.Adapter<AuctionRecyclerAdapter.ItemViewHolder>() {
@@ -22,7 +22,7 @@ class AuctionRecyclerAdapter(private var itemList: MutableList<AuctionItem>) : R
         notifyItemChanged(position)
     }
 
-    fun insertSingleItem(addedItem : AuctionItem, position: Int) {
+    fun insertSingleItem(addedItem : AuctionItem, position: Int = (itemList.size)) {
         itemList.add(position, addedItem)
         notifyItemInserted(position)
     }
