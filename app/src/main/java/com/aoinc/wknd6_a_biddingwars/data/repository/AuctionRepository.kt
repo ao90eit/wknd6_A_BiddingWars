@@ -19,6 +19,7 @@ object AuctionRepository {
         val changedAuctionItem: MutableLiveData<AuctionItem> = MutableLiveData()
     }
 
+    // TODO: try to add incoming items to a list and post the values every 10 seconds - batch updates
     // Retrieve the latest live item data from the Firebase repo
     fun getNewAuctionItem(): DatabaseCallbackRefItems {
         val callbackRefs = DatabaseCallbackRefItems()
@@ -28,6 +29,7 @@ object AuctionRepository {
 
                 override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
                     snapshot.getValue(AuctionItem::class.java)?.let {
+                        snapshot.key?.let { key -> it.idKey = key }
                         callbackRefs.addedAuctionItem.value = it
                     }
 
@@ -70,5 +72,12 @@ object AuctionRepository {
     fun publishNewAuctionItem (auctionItem: AuctionItem) {
         firebaseDatabase.reference.child(Constants.AUCTION_ITEM_REF).push().setValue(auctionItem)
         Log.d("TAG_X", "Item Posted -> \n ${auctionItem.name}")
+    }
+
+    // Push a new auction item to the Firebase repo
+    fun updateAuctionItem (auctionItem: AuctionItem) {
+        firebaseDatabase.reference.child(Constants.AUCTION_ITEM_REF)
+            .child(auctionItem.idKey).setValue(auctionItem)
+        Log.d("TAG_X", "Item Updated -> \n ${auctionItem.name}")
     }
 }

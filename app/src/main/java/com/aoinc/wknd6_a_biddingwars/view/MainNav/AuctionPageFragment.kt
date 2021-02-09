@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.aoinc.wknd6_a_biddingwars.R
 import com.aoinc.wknd6_a_biddingwars.data.model.AuctionItem
+import com.aoinc.wknd6_a_biddingwars.data.repository.AuctionRepository
 import com.aoinc.wknd6_a_biddingwars.view.MainNav.adapter.AuctionRecyclerAdapter
 import com.aoinc.wknd6_a_biddingwars.viewmodel.AuctionViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -80,14 +81,27 @@ class AuctionPageFragment : Fragment() {
 //            auctionViewModel.publishNewAuctionItem(t)
 
         view.findViewById<Button>(R.id.test_push_button).setOnClickListener {
-            for (t in testItems2)
-                auctionViewModel.publishNewAuctionItem(t)
+//            for (t in testItems2)
+//                auctionViewModel.publishNewAuctionItem(t)
+
+            for (i in auctionRecyclerAdapter.getItemList()) {
+                i.isSold = !i.isSold
+                AuctionRepository.updateAuctionItem(i)
+            }
         }
         // END TESTS
 
         auctionViewModel.getAddedAuctionItem().observe(viewLifecycleOwner, {
             Log.d("TAG_X", "observed added -> $it")
             auctionRecyclerAdapter.insertSingleItem(it)
+        })
+
+        auctionViewModel.getChangedAuctionItem().observe(viewLifecycleOwner, {
+            Log.d("TAG_D", "observed updated -> $it")
+            val position: Int = auctionRecyclerAdapter.getItemList().indexOfFirst {
+                    i -> i.idKey == it.idKey
+            }
+            auctionRecyclerAdapter.updateSingleItem(it, position)
         })
     }
 }

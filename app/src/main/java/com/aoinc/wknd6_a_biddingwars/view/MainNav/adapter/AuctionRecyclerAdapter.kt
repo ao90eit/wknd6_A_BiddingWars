@@ -22,6 +22,10 @@ class AuctionRecyclerAdapter(private var itemList: MutableList<AuctionItem>) : R
         notifyItemChanged(position)
     }
 
+    fun getItemList(): MutableList<AuctionItem> {
+        return itemList
+    }
+
     fun insertSingleItem(addedItem : AuctionItem, position: Int = (itemList.size)) {
         itemList.add(position, addedItem)
         notifyItemInserted(position)
