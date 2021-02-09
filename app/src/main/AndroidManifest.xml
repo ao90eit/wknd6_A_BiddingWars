@@ -15,10 +15,21 @@
         <activity android:name=".view.Login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:authorities="com.aoinc.wknd6_a_biddingwars.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data android:resource="@xml/file_path"
+                android:name="android.support.FILE_PROVIDER_PATHS" />
+
+        </provider>
+
     </application>
 
 </manifest>

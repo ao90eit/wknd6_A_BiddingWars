@@ -46,53 +46,35 @@ class AuctionPageFragment : Fragment() {
         firebaseAuth.currentUser?.let { currentUserId = it.uid }
 
         auctionRecyclerView = view.findViewById(R.id.auction_items_recyclerView)
-
-        // TEST ITEMS
-        val testItems1 = mutableListOf(
-            AuctionItem("https://i.ytimg.com/vi/xbNuhPIwjjc/maxresdefault.jpg",
-                "Spiky Balls",
-                "Some balls",
-                currentUserId
-            ),
-            AuctionItem("https://i.ytimg.com/vi/CddOyuyu_hc/maxresdefault.jpg",
-                "Things Things Things",
-                "musical album",
-                currentUserId,
-                isSold = true
-            )
-        )
-
-        val testItems2 = mutableListOf(
-            AuctionItem("https://blog.sfgate.com/soccer/files/2015/04/5-things-you-need-to-know-about-body-waxing.jpg",
-                "5 Surprise Things",
-                "Self explanatory",
-                currentUserId
-            ),
-            AuctionItem("https://curlyqtop.files.wordpress.com/2013/08/things-that-are-orange-021.jpg",
-                "A Pretty Flower",
-                "Very pretty, smells nice",
-                currentUserId,
-                isSold = true
-            )
-        )
-        // END TEST ITEMS
-
         auctionRecyclerView.adapter = auctionRecyclerAdapter
 
+        // TEST ITEMS
+//        val testItems1 = mutableListOf(
+//            AuctionItem("https://i.ytimg.com/vi/xbNuhPIwjjc/maxresdefault.jpg",
+//                "Spiky Balls",
+//                "Some balls",
+//                currentUserId
+//            ),
+//            AuctionItem("https://i.ytimg.com/vi/CddOyuyu_hc/maxresdefault.jpg",
+//                "Things Things Things",
+//                "musical album",
+//                currentUserId,
+//                isSold = true
+//            )
+//        )
 
-        // MORE TESTS
 //        for (t in testItems1)
 //            auctionViewModel.publishNewAuctionItem(t)
 
-        view.findViewById<Button>(R.id.test_push_button).setOnClickListener {
-//            for (t in testItems2)
-//                auctionViewModel.publishNewAuctionItem(t)
-
-            for (i in auctionRecyclerAdapter.getItemList()) {
-                i.isSold = !i.isSold
-                AuctionRepository.updateAuctionItem(i)
-            }
-        }
+//        view.findViewById<Button>(R.id.test_push_button).setOnClickListener {
+////            for (t in testItems1)
+////                auctionViewModel.publishNewAuctionItem(t)
+//
+//            for (i in auctionRecyclerAdapter.getItemList()) {
+//                i.isSold = !i.isSold
+//                AuctionRepository.updateAuctionItem(i)
+//            }
+//        }
         // END TESTS
 
         // '+' button event
@@ -110,12 +92,12 @@ class AuctionPageFragment : Fragment() {
         }
 
         auctionViewModel.getAddedAuctionItem().observe(viewLifecycleOwner, {
-            Log.d("TAG_X", "observed added -> $it")
+//            Log.d("TAG_X", "observed added -> $it")
             auctionRecyclerAdapter.insertSingleItem(it)
         })
 
         auctionViewModel.getChangedAuctionItem().observe(viewLifecycleOwner, {
-            Log.d("TAG_D", "observed updated -> $it")
+//            Log.d("TAG_X", "observed updated -> $it")
             val position: Int = auctionRecyclerAdapter.getItemList().indexOfFirst {
                     i -> i.idKey == it.idKey
             }

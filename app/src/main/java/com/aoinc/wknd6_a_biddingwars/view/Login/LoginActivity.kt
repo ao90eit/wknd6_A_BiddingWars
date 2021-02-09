@@ -55,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
 
                         } else {
                             AppAlert.makeToast(this,it.exception?.localizedMessage
-                                ?: getString(R.string.unkown_login_error), Toast.LENGTH_LONG)
+                                ?: getString(R.string.unkown_login_error))
                         }
                     }
             }
@@ -87,8 +87,7 @@ class LoginActivity : AppCompatActivity() {
             if (it.isEmailVerified)
                 loadMainNavActivity()
             else
-                AppAlert.makeToast(this,getString(R.string.verify_email_message),
-                    Toast.LENGTH_LONG)
+                AppAlert.makeToast(this,getString(R.string.verify_email_message))
         }
     }
 
@@ -104,7 +103,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         if (inputErrorMsg.isNotBlank()) {
-            AppAlert.makeToast(this, inputErrorMsg, Toast.LENGTH_LONG)
+            AppAlert.makeToast(this, inputErrorMsg)
             return false
         }
 

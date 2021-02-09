@@ -71,13 +71,13 @@ object AuctionRepository {
     // Push a new auction item to the Firebase repo
     fun publishNewAuctionItem (auctionItem: AuctionItem) {
         firebaseDatabase.reference.child(Constants.AUCTION_ITEM_REF).push().setValue(auctionItem)
-        Log.d("TAG_X", "Item Posted -> \n ${auctionItem.name}")
+//        Log.d("TAG_X", "Item Posted -> \n ${auctionItem.name}")
     }
 
     // Push a new auction item to the Firebase repo
     fun updateAuctionItem (auctionItem: AuctionItem) {
         firebaseDatabase.reference.child(Constants.AUCTION_ITEM_REF)
             .child(auctionItem.idKey).setValue(auctionItem)
-        Log.d("TAG_X", "Item Updated -> \n ${auctionItem.name}")
+//        Log.d("TAG_X", "Item Updated -> \n ${auctionItem.name}")
     }
 }

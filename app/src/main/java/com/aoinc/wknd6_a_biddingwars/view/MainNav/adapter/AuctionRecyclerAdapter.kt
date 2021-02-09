@@ -40,7 +40,7 @@ class AuctionRecyclerAdapter(private var itemList: MutableList<AuctionItem>) : R
 
         holder.apply {
             Glide.with(itemView)
-                .load(item.photoUrl)
+                .load(item.photoUri)
                 .placeholder(R.drawable.ic_baseline_photo_24)
                 .into(itemImage)
 

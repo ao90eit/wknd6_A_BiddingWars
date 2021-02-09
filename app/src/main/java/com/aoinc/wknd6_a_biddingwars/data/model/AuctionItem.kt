@@ -2,7 +2,7 @@ package com.aoinc.wknd6_a_biddingwars.data.model
 
 data class AuctionItem(
     // User input data
-    val photoUrl: String = "",
+    val photoUri: String = "",
     val name: String = "",
     val description: String = "",
     val seller: String = "",   // TODO: use Firebase user id here (for now)

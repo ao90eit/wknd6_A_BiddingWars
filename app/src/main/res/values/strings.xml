@@ -17,4 +17,5 @@
     <string name="error_no_item_photo">Please include a photo</string>
     <string name="error_no_item_name">Please give your item a name</string>
     <string name="error_no_item_description">Please write a description</string>
+    <string name="file_provider_authority">com.aoinc.wknd6_a_biddingwars.fileprovider</string>
 </resources>

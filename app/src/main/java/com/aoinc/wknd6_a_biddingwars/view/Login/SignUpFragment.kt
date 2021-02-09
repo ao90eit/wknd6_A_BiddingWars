@@ -87,7 +87,7 @@ class SignUpFragment : Fragment() {
         }
 
         if (inputErrorMsg.isNotBlank()) {
-            context?.let { AppAlert.makeToast(it, inputErrorMsg, Toast.LENGTH_LONG) }
+            context?.let { AppAlert.makeToast(it, inputErrorMsg) }
             return false
         }
 
