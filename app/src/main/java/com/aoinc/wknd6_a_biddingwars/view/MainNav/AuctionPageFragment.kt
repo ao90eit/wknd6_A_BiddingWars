@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.aoinc.wknd6_a_biddingwars.R
 import com.aoinc.wknd6_a_biddingwars.data.model.AuctionItem
 import com.aoinc.wknd6_a_biddingwars.data.repository.AuctionRepository
+import com.aoinc.wknd6_a_biddingwars.view.AddItem.AddAuctionItemFragment
 import com.aoinc.wknd6_a_biddingwars.view.MainNav.adapter.AuctionRecyclerAdapter
 import com.aoinc.wknd6_a_biddingwars.viewmodel.AuctionViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 
 class AuctionPageFragment : Fragment() {
@@ -24,6 +26,9 @@ class AuctionPageFragment : Fragment() {
 
     // View model
     private val auctionViewModel: AuctionViewModel by activityViewModels()
+
+    // Fragments
+    private val addAuctionItemFragment = AddAuctionItemFragment()
 
     // Layout views
     private lateinit var auctionRecyclerView: RecyclerView
@@ -72,7 +77,6 @@ class AuctionPageFragment : Fragment() {
         )
         // END TEST ITEMS
 
-//        auctionRecyclerAdapter.updateAllItems(testItems1)
         auctionRecyclerView.adapter = auctionRecyclerAdapter
 
 
@@ -90,6 +94,20 @@ class AuctionPageFragment : Fragment() {
             }
         }
         // END TESTS
+
+        // '+' button event
+        view.findViewById<FloatingActionButton>(R.id.add_item_fab).setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    R.anim.slide_in_from_bottom,
+                    R.anim.slide_out_to_bottom,
+                    R.anim.slide_in_from_bottom,
+                    R.anim.slide_out_to_bottom
+                )
+                .add(R.id.add_item_fragment_container, addAuctionItemFragment)
+                .addToBackStack(addAuctionItemFragment.tag)
+                .commit()
+        }
 
         auctionViewModel.getAddedAuctionItem().observe(viewLifecycleOwner, {
             Log.d("TAG_X", "observed added -> $it")

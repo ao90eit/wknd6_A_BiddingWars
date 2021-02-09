@@ -8,8 +8,8 @@ data class AuctionItem(
     val seller: String = "",   // TODO: use Firebase user id here (for now)
 
     // Data populated in auction list
-    var lastBidder: String = "", // TODO: user id again (for now)
     var currentBid: Double = 0.0,
+    var lastBidder: String = "", // TODO: user id again (for now)
     var numBids: Int = 0,
     var isSold: Boolean = false,
 

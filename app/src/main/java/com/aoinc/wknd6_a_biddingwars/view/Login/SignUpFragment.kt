@@ -88,7 +88,6 @@ class SignUpFragment : Fragment() {
 
         if (inputErrorMsg.isNotBlank()) {
             context?.let { AppAlert.makeToast(it, inputErrorMsg, Toast.LENGTH_LONG) }
-            viewLifecycleOwner
             return false
         }
 
