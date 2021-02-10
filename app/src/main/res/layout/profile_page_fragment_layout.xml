@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6DE5F4">
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_photo_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="@color/photo_background"
+        app:layout_constraintBottom_toBottomOf="@id/guide_image_bottom"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_image_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/profile_user_name_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/guide_image_bottom"
+        tools:text="User Name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/profile_user_id_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_id_text"
+        app:layout_constraintTop_toBottomOf="@id/profile_user_name_textView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/profile_email_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_email_text"
+        app:layout_constraintTop_toBottomOf="@id/profile_user_id_textView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/profile_location_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_location_text"
+        app:layout_constraintTop_toBottomOf="@id/profile_email_textView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/profile_log_out_button"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="@string/sign_out_button"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

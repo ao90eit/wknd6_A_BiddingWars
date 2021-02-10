@@ -26,4 +26,8 @@
     <string name="last_bidder_text">Last bidder: %s</string>
     <string name="total_bids_count">Total bids: %d</string>
     <string name="add_photo_content_desc">Click to add item photo</string>
+    <string name="sign_out_button">Sign out</string>
+    <string name="user_id_text">User ID: %s</string>
+    <string name="user_email_text">Email: %s</string>
+    <string name="user_location_text">Location: %s</string>
 </resources>

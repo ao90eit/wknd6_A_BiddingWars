@@ -19,9 +19,6 @@ import com.google.android.material.textview.MaterialTextView
 
 class ItemBiddingFragment : Fragment() {
 
-    // Firebase
-//    private val firebaseAuth = FirebaseAuth.getInstance()
-
     // View model
     private val auctionViewModel: AuctionViewModel by activityViewModels()
 

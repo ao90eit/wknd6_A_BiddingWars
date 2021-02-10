@@ -45,11 +45,11 @@ object AuctionRepository {
                 }
 
                 override fun onChildRemoved(snapshot: DataSnapshot) {
-//                    TODO("Not yet implemented")
+                    // not used
                 }
 
                 override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
-//                    TODO("Not yet implemented")
+                    // TODO: move items to bottom of list when 'sold'
                 }
 
                 override fun onCancelled(error: DatabaseError) {
