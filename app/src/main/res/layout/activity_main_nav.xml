@@ -21,7 +21,7 @@
         app:menu="@menu/main_nav_page_menu"/>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/add_item_fragment_container"
+        android:id="@+id/full_page_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:elevation="16dp" />

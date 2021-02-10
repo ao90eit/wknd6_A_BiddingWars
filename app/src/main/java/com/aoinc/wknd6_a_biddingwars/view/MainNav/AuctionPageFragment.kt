@@ -1,24 +1,25 @@
 package com.aoinc.wknd6_a_biddingwars.view.MainNav
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.aoinc.wknd6_a_biddingwars.R
 import com.aoinc.wknd6_a_biddingwars.data.model.AuctionItem
-import com.aoinc.wknd6_a_biddingwars.data.repository.AuctionRepository
-import com.aoinc.wknd6_a_biddingwars.view.AddItem.AddAuctionItemFragment
+import com.aoinc.wknd6_a_biddingwars.util.Constants
+import com.aoinc.wknd6_a_biddingwars.view.AuctionItem.AddAuctionItemFragment
+import com.aoinc.wknd6_a_biddingwars.view.AuctionItem.ItemBiddingFragment
 import com.aoinc.wknd6_a_biddingwars.view.MainNav.adapter.AuctionRecyclerAdapter
+import com.aoinc.wknd6_a_biddingwars.view.MainNav.adapter.AuctionRecyclerAdapter.AuctionItemClickListener
 import com.aoinc.wknd6_a_biddingwars.viewmodel.AuctionViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 
-class AuctionPageFragment : Fragment() {
+class AuctionPageFragment : Fragment(), AuctionItemClickListener {
 
     // Firebase
     private val firebaseAuth = FirebaseAuth.getInstance()
@@ -29,10 +30,11 @@ class AuctionPageFragment : Fragment() {
 
     // Fragments
     private val addAuctionItemFragment = AddAuctionItemFragment()
+    private val itemBiddingFragment = ItemBiddingFragment()
 
     // Layout views
     private lateinit var auctionRecyclerView: RecyclerView
-    private val auctionRecyclerAdapter = AuctionRecyclerAdapter(mutableListOf())
+    private val auctionRecyclerAdapter = AuctionRecyclerAdapter(mutableListOf(), this)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -86,7 +88,7 @@ class AuctionPageFragment : Fragment() {
                     R.anim.slide_in_from_bottom,
                     R.anim.slide_out_to_bottom
                 )
-                .add(R.id.add_item_fragment_container, addAuctionItemFragment)
+                .add(R.id.full_page_fragment_container, addAuctionItemFragment)
                 .addToBackStack(addAuctionItemFragment.tag)
                 .commit()
         }
@@ -103,5 +105,24 @@ class AuctionPageFragment : Fragment() {
             }
             auctionRecyclerAdapter.updateSingleItem(it, position)
         })
+    }
+
+    // loads on recycler item click, from AuctionItemClickListener
+    override fun loadBiddingFragment(auctionItem: AuctionItem) {
+
+        val args = bundleOf()
+        args.putParcelable(Constants.AUCTION_ITEM_ARG, auctionItem)
+        itemBiddingFragment.arguments = args
+
+        parentFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                R.anim.slide_in_from_bottom,
+                R.anim.slide_out_to_bottom,
+                R.anim.slide_in_from_bottom,
+                R.anim.slide_out_to_bottom
+            )
+            .add(R.id.full_page_fragment_container, itemBiddingFragment)
+            .addToBackStack(itemBiddingFragment.tag)
+            .commit()
     }
 }

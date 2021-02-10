@@ -3,7 +3,6 @@ package com.aoinc.wknd6_a_biddingwars.view.MainNav
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.aoinc.wknd6_a_biddingwars.R
 import com.aoinc.wknd6_a_biddingwars.view.MainNav.adapter.MainFragmentsAdapter
@@ -38,8 +37,8 @@ class MainNavActivity : AppCompatActivity() {
         // Link pages to navigation
         navMenu.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.auction_page_menu_item -> loadFragment(0)
-                else -> loadFragment(1)
+                R.id.auction_page_menu_item -> loadPagerFragment(0)
+                else -> loadPagerFragment(1)
             }
             true
         }
@@ -56,7 +55,7 @@ class MainNavActivity : AppCompatActivity() {
         })
     }
 
-    private fun loadFragment(fragmentId: Int) {
+    private fun loadPagerFragment(fragmentId: Int) {
         viewPager.currentItem = fragmentId
     }
 }

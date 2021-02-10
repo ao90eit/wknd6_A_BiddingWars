@@ -33,4 +33,7 @@ class AuctionViewModel : ViewModel() {
 
     fun publishNewAuctionItem(auctionItem: AuctionItem) =
         AuctionRepository.publishNewAuctionItem(auctionItem)
+
+    fun updateAuctionItem(auctionItem: AuctionItem) =
+        AuctionRepository.updateAuctionItem(auctionItem)
 }

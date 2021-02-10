@@ -60,14 +60,6 @@ object AuctionRepository {
         return callbackRefs
     }
 
-//    override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-//        snapshot.getValue(AuctionItem::class.java)?.let {
-//            auctionItemLiveData.value = it
-//        }
-//        Log.d("TAG_X", "CHANGED ITEM -> ${auctionItemLiveData.value}")
-//
-//    }
-
     // Push a new auction item to the Firebase repo
     fun publishNewAuctionItem (auctionItem: AuctionItem) {
         firebaseDatabase.reference.child(Constants.AUCTION_ITEM_REF).push().setValue(auctionItem)

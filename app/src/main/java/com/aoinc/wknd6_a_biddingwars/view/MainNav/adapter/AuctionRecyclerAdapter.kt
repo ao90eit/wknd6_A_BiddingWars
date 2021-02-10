@@ -10,7 +10,14 @@ import com.aoinc.wknd6_a_biddingwars.R
 import com.aoinc.wknd6_a_biddingwars.data.model.AuctionItem
 import com.bumptech.glide.Glide
 
-class AuctionRecyclerAdapter(private var itemList: MutableList<AuctionItem>) : RecyclerView.Adapter<AuctionRecyclerAdapter.ItemViewHolder>() {
+class AuctionRecyclerAdapter(
+    private var itemList: MutableList<AuctionItem>,
+    var auctionItemClickListener : AuctionItemClickListener)
+: RecyclerView.Adapter<AuctionRecyclerAdapter.ItemViewHolder>() {
+
+    interface AuctionItemClickListener {
+        fun loadBiddingFragment(auctionItem: AuctionItem)
+    }
 
     fun updateAllItems(updatedList : MutableList<AuctionItem>) {
         itemList = updatedList
@@ -52,6 +59,11 @@ class AuctionRecyclerAdapter(private var itemList: MutableList<AuctionItem>) : R
             sold.visibility = when (item.isSold) {
                 true -> View.VISIBLE
                 else -> View.GONE
+            }
+
+            // HACK: i don't like this inside the bind view... can't think of better to pass item
+            itemView.setOnClickListener {
+                auctionItemClickListener.loadBiddingFragment(item)
             }
         }
     }

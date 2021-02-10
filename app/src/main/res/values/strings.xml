@@ -18,4 +18,12 @@
     <string name="error_no_item_name">Please give your item a name</string>
     <string name="error_no_item_description">Please write a description</string>
     <string name="file_provider_authority">com.aoinc.wknd6_a_biddingwars.fileprovider</string>
+    <string name="item_description_hint">Item description</string>
+    <string name="item_name_hint">Item name</string>
+    <string name="simple_bid_button_text">Bid on it!</string>
+    <string name="bid_seller_label">Sold by: %s</string>
+    <string name="current_bid">Current bid: %f</string>
+    <string name="last_bidder_text">Last bidder: %s</string>
+    <string name="total_bids_count">Total bids: %d</string>
+    <string name="add_photo_content_desc">Click to add item photo</string>
 </resources>
