@@ -9,11 +9,11 @@ data class AuctionItem(
     val photoUri: String = "",
     val name: String = "",
     val description: String = "",
-    val seller: String = "",   // TODO: use Firebase user id here (for now)
+    val seller: String = "",
 
     // Data populated in auction list
     var currentBid: Double = 0.0,
-    var lastBidder: String = "", // TODO: user id again (for now)
+    var lastBidder: String = "",
     var numBids: Int = 0,
     var isSold: Boolean = false,
 
