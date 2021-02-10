@@ -50,35 +50,6 @@ class AuctionPageFragment : Fragment(), AuctionItemClickListener {
         auctionRecyclerView = view.findViewById(R.id.auction_items_recyclerView)
         auctionRecyclerView.adapter = auctionRecyclerAdapter
 
-        // TEST ITEMS
-//        val testItems1 = mutableListOf(
-//            AuctionItem("https://i.ytimg.com/vi/xbNuhPIwjjc/maxresdefault.jpg",
-//                "Spiky Balls",
-//                "Some balls",
-//                currentUserId
-//            ),
-//            AuctionItem("https://i.ytimg.com/vi/CddOyuyu_hc/maxresdefault.jpg",
-//                "Things Things Things",
-//                "musical album",
-//                currentUserId,
-//                isSold = true
-//            )
-//        )
-
-//        for (t in testItems1)
-//            auctionViewModel.publishNewAuctionItem(t)
-
-//        view.findViewById<Button>(R.id.test_push_button).setOnClickListener {
-////            for (t in testItems1)
-////                auctionViewModel.publishNewAuctionItem(t)
-//
-//            for (i in auctionRecyclerAdapter.getItemList()) {
-//                i.isSold = !i.isSold
-//                AuctionRepository.updateAuctionItem(i)
-//            }
-//        }
-        // END TESTS
-
         // '+' button event
         view.findViewById<FloatingActionButton>(R.id.add_item_fab).setOnClickListener {
             parentFragmentManager.beginTransaction()

@@ -1,14 +1,17 @@
 package com.aoinc.wknd6_a_biddingwars.view.MainNav
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.aoinc.wknd6_a_biddingwars.R
+import com.aoinc.wknd6_a_biddingwars.view.Login.LoginActivity
 import com.aoinc.wknd6_a_biddingwars.viewmodel.AuctionViewModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -30,6 +33,7 @@ class ProfilePageFragment : Fragment() {
     private lateinit var userNameTextView: TextView
     private lateinit var userIdTextView: TextView
     private lateinit var userEmailTextView: TextView
+    private lateinit var logOutButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +48,7 @@ class ProfilePageFragment : Fragment() {
         userNameTextView = view.findViewById(R.id.profile_user_name_textView)
         userIdTextView = view.findViewById(R.id.profile_user_id_textView)
         userEmailTextView = view.findViewById(R.id.profile_email_textView)
+        logOutButton = view.findViewById(R.id.profile_log_out_button)
 
         firebaseAuth.currentUser?.let {
             context?.let { con ->
@@ -57,6 +62,16 @@ class ProfilePageFragment : Fragment() {
             userNameTextView.text = it.displayName
             userIdTextView.text = getString(R.string.user_id_text, it.uid)
             userEmailTextView.text = getString(R.string.user_email_text, it.email)
+
+            // log out user
+            logOutButton.setOnClickListener {
+                firebaseAuth.signOut()
+                context?.let { con ->
+                    startActivity(Intent(con, LoginActivity::class.java).also { i ->
+                        i.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    })
+                }
+            }
         }
     }
 }
