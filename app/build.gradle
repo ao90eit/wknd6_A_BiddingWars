@@ -3,9 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services' // for firebase
+    id 'kotlin-parcelize'   // for @Parcelize
 }
-
-apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 30

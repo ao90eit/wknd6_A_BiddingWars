@@ -22,7 +22,7 @@
     <string name="item_name_hint">Item name</string>
     <string name="simple_bid_button_text">Bid on it!</string>
     <string name="bid_seller_label">Sold by: %s</string>
-    <string name="current_bid">Current bid: %f</string>
+    <string name="current_bid">Current bid: %.2f</string>
     <string name="last_bidder_text">Last bidder: %s</string>
     <string name="total_bids_count">Total bids: %d</string>
     <string name="add_photo_content_desc">Click to add item photo</string>
