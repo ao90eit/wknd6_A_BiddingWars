@@ -25,36 +25,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/list_photo_imageView"
-            app:layout_constraintBottom_toTopOf="@id/list_bids_textView"
             android:textSize="24sp"
             tools:text="Item Name"
             />
 
-<!--        <com.google.android.material.textview.MaterialTextView-->
-<!--            android:id="@+id/list_seller_textView"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/list_title_textView"-->
-<!--            app:layout_constraintBottom_toTopOf="@id/list_bids_textView"-->
-<!--            android:textSize="24sp"-->
-<!--            android:text="Seller: %s"-->
-<!--            />-->
-
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/list_bids_textView"
+            android:id="@+id/list_seller_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/list_title_textView"
-            app:layout_constraintBottom_toTopOf="@id/list_last_bidder_textView"
+            android:textSize="24sp"
+            android:text="Seller: %s"
+            />
+
+<!--        <com.google.android.material.textview.MaterialTextView-->
+<!--            android:id="@+id/list_bids_textView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/list_seller_textView"-->
+<!--            android:textSize="16sp"-->
+<!--            tools:text="@string/num_bids_display"-->
+<!--            />-->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/list_current_bid_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/list_seller_textView"
             android:textSize="16sp"
-            tools:text="@string/num_bids_display"
+            tools:text="@string/current_bid"
             />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/list_last_bidder_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/list_bids_textView"
+            app:layout_constraintTop_toBottomOf="@id/list_current_bid_textView"
             app:layout_constraintBottom_toTopOf="@id/list_sold_barrier"
             android:textSize="16sp"
             tools:text="@string/top_bidder_display"

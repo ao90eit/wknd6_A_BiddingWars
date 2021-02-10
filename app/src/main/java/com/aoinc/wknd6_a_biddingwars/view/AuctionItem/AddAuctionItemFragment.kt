@@ -141,7 +141,7 @@ class AddAuctionItemFragment : Fragment() {
         val photoUri = firebasePhotoUri.toString()
         val item = AuctionItem(
             photoUri, name, description,
-            firebaseAuth.currentUser?.uid.toString(),
+            firebaseAuth.currentUser?.displayName.toString(),
             0.00)
 
         auctionViewModel.publishNewAuctionItem(item)

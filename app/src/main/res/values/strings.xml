@@ -22,7 +22,7 @@
     <string name="item_name_hint">Item name</string>
     <string name="simple_bid_button_text">Bid on it!</string>
     <string name="bid_seller_label">Sold by: %s</string>
-    <string name="current_bid">Current bid: %.2f</string>
+    <string name="current_bid">Current bid: $%.2f</string>
     <string name="last_bidder_text">Last bidder: %s</string>
     <string name="total_bids_count">Total bids: %d</string>
     <string name="add_photo_content_desc">Click to add item photo</string>
@@ -33,4 +33,8 @@
     <string name="sign_up_user_name_error">Please enter a user name</string>
     <string name="verification_email_alert">Check for verification email</string>
     <string name="sign_up_user_name_hint">User name</string>
+    <string name="bid_amount_hint">Bid amount</string>
+    <string name="bid_too_low_alert">You must bid higher</string>
+    <string name="bid_amount_notify">You bid $%.2f on %s</string>
+    <string name="awesome">AWESOME!</string>
 </resources>

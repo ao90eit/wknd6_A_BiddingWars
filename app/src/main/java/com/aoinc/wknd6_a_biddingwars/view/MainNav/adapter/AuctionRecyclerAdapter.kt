@@ -33,7 +33,7 @@ class AuctionRecyclerAdapter(
         return itemList
     }
 
-    fun insertSingleItem(addedItem : AuctionItem, position: Int = (itemList.size)) {
+    fun insertSingleItem(addedItem : AuctionItem, position: Int = 0) {
         itemList.add(position, addedItem)
         notifyItemInserted(position)
     }
@@ -54,14 +54,16 @@ class AuctionRecyclerAdapter(
             val res = itemView.resources
 
             name.text = item.name
-            bids.text = res.getString(R.string.num_bids_display, item.numBids)
+            seller.text = res.getString(R.string.bid_seller_label, item.seller)
+//            bids.text = res.getString(R.string.num_bids_display, item.numBids)
+            currentBid.text = res.getString(R.string.current_bid, item.currentBid)
             lastBidder.text = res.getString(R.string.top_bidder_display, item.lastBidder)
             sold.visibility = when (item.isSold) {
                 true -> View.VISIBLE
                 else -> View.GONE
             }
 
-            // HACK: i don't like this inside the bind view... can't think of better to pass item
+            // HACK: i don't like this inside the bind view... can't think of better way to pass item
             itemView.setOnClickListener {
                 auctionItemClickListener.loadBiddingFragment(item)
             }
@@ -73,7 +75,9 @@ class AuctionRecyclerAdapter(
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var itemImage: ImageView = itemView.findViewById(R.id.list_photo_imageView)
         var name: TextView = itemView.findViewById(R.id.list_title_textView)
-        var bids: TextView = itemView.findViewById(R.id.list_bids_textView)
+        var seller: TextView = itemView.findViewById(R.id.list_seller_textView)
+//        var bids: TextView = itemView.findViewById(R.id.list_bids_textView)
+        var currentBid: TextView = itemView.findViewById(R.id.list_current_bid_textView)
         var lastBidder: TextView = itemView.findViewById(R.id.list_last_bidder_textView)
         var sold: ImageView = itemView.findViewById(R.id.list_sold_imageView)
     }
