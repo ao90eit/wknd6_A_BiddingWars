@@ -30,7 +30,6 @@ class ProfilePageFragment : Fragment() {
     private lateinit var userNameTextView: TextView
     private lateinit var userIdTextView: TextView
     private lateinit var userEmailTextView: TextView
-    private lateinit var userLocationTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,21 +44,19 @@ class ProfilePageFragment : Fragment() {
         userNameTextView = view.findViewById(R.id.profile_user_name_textView)
         userIdTextView = view.findViewById(R.id.profile_user_id_textView)
         userEmailTextView = view.findViewById(R.id.profile_email_textView)
-        userLocationTextView = view.findViewById(R.id.profile_location_textView)
 
         firebaseAuth.currentUser?.let {
             context?.let { con ->
                 Glide.with(con)
-                    .applyDefaultRequestOptions(RequestOptions().circleCrop())
                     .load(it.photoUrl)
+                    .circleCrop()
                     .placeholder(R.drawable.ic_baseline_person_24)
                     .into(profilePhotoImageView)
             }
 
-            userNameTextView.text = "FIXME!"
+            userNameTextView.text = it.displayName
             userIdTextView.text = getString(R.string.user_id_text, it.uid)
             userEmailTextView.text = getString(R.string.user_email_text, it.email)
-            userLocationTextView.text = getString(R.string.user_location_text, "FIXME!")
         }
     }
 }

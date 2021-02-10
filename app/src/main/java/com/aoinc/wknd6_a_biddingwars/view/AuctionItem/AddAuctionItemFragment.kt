@@ -130,7 +130,8 @@ class AddAuctionItemFragment : Fragment() {
                     }
 
                 } ?: context?.let {
-                    AppAlert.makeToast(it, getString(R.string.error_no_item_photo))}
+                    AppAlert.makeToast(it, getString(R.string.error_no_item_photo))
+                }
             }
         }
     }
