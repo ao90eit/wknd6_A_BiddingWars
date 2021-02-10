@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">wknd6_A_BiddingWars</string>
+    <string name="app_name">Bidding Wars!</string>
     <string name="password_hint">Password</string>
     <string name="user_email_hint">User email</string>
     <string name="login_button_text">Sign in</string>
@@ -12,7 +12,7 @@
     <string name="unkown_login_error">Unknown error signing in</string>
     <string name="verify_email_message">You must verify your email</string>
     <string name="num_bids_display">Bids: %d</string>
-    <string name="top_bidder_display">Top Bidder: %s</string>
+    <string name="top_bidder_display">Top Bid: %s</string>
     <string name="publish_button_text">Publish your item!</string>
     <string name="error_no_item_photo">Please include a photo</string>
     <string name="error_no_item_name">Please give your item a name</string>
@@ -22,9 +22,9 @@
     <string name="item_name_hint">Item name</string>
     <string name="simple_bid_button_text">Bid on it!</string>
     <string name="bid_seller_label">Sold by: %s</string>
-    <string name="current_bid">Current bid: $%.2f</string>
-    <string name="last_bidder_text">Last bidder: %s</string>
-    <string name="total_bids_count">Total bids: %d</string>
+    <string name="current_bid">Now: $%.2f</string>
+    <string name="last_bidder_text">Last bid: %s</string>
+    <string name="total_bids_count">Bids: %d</string>
     <string name="add_photo_content_desc">Click to add item photo</string>
     <string name="sign_out_button">Sign out</string>
     <string name="user_id_text">User ID: %s</string>

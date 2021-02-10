@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainNav.MainNavActivity">
+    tools:context=".view.MainNav.MainNavActivity"
+    android:background="@drawable/pink_rice_texture">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/main_nav_viewPager2"
@@ -15,6 +16,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_nav_bottomNavigationView"
+        android:background="@color/off_white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

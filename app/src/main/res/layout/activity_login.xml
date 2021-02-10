@@ -4,18 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.Login.LoginActivity">
+    tools:context=".view.Login.LoginActivity"
+    android:background="@color/off_white">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/login_title_textView"
+        style="@style/TitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/guide_25"
+        android:textAlignment="center"
+        android:text="@string/app_name" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".25" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_email_inputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/EditTextLayoutBase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/user_email_hint"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/login_title_textView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_email_editText"
+            style="@style/EditTextBase"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -25,7 +43,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_password_inputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/EditTextLayoutBase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password_hint"
@@ -33,6 +51,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_password_editText"
+            style="@style/EditTextBase"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -42,6 +61,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/login_button"
+        style="@style/ButtonBase"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         app:layout_constraintTop_toBottomOf="@id/login_password_inputLayout"
@@ -49,11 +69,12 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/login_sign_up_text_button"
+        style="@style/ButtonBase"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="@string/sign_up_button_text"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/coffee_pot_dark"
         android:background="@color/transparent" />
 
     <androidx.fragment.app.FragmentContainerView

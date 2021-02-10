@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Wknd6_A_BiddingWars" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Wknd6_A_BiddingWars" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,5 +12,79 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="TextBase">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextViewBase" parent="TextBase">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="ListText" parent="TextViewBase">
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
+
+    <style name="TitleTextView" parent="TextViewBase">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ListTitle" parent="TitleTextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="ImageBase">
+        <item name="android:background">@color/off_white</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
+    <style name="ListImage" parent="ImageBase">
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="EditTextBase" parent="TextBase">
+        <item name="backgroundTint">@color/off_white</item>
+    </style>
+
+    <style name="MoneyEditText" parent="EditTextBase">
+        <item name="backgroundTint">@color/minty_green</item>
+    </style>
+
+    <style name="EditTextLayoutBase" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="ButtonBase">
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:backgroundTint">@color/rosewater</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ButtonFab" parent="ButtonBase">
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
     </style>
 </resources>

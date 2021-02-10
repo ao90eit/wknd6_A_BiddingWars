@@ -9,4 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>
     <color name="photo_background">#EEEE</color>
+    <color name="rosewater">#E8B4B8</color>
+    <color name="dusty_rose">#EED6D3</color>
+    <color name="coffee_pot_dark">#67595E</color>
+    <color name="coffee_pot_light">#A49393</color>
+    <color name="off_white">#F8F8FF</color>
+    <color name="minty_green">#BCF89B</color>
 </resources>

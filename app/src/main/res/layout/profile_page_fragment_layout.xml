@@ -10,6 +10,7 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profile_photo_imageView"
+        style="@style/ImageBase"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
@@ -27,6 +28,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/profile_user_name_textView"
+        style="@style/TitleTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/guide_image_bottom"
@@ -34,6 +36,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/profile_user_id_textView"
+        style="@style/TextViewBase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/user_id_text"
@@ -41,6 +44,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/profile_email_textView"
+        style="@style/TextViewBase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/user_email_text"
@@ -48,6 +52,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/profile_log_out_button"
+        style="@style/ButtonBase"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:text="@string/sign_out_button"
