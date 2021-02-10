@@ -136,21 +136,20 @@ class SignUpFragment : Fragment() {
                             AppAlert.makeToast(con, getString(R.string.verification_email_alert))
                         }
 
-                        // TODO: consolidate 'let's
-                        // send verification email
-                        firebaseAuth.currentUser?.sendEmailVerification()
-
-                        val profileUpdates = UserProfileChangeRequest.Builder()
-                            .setDisplayName(userName)
-                            .build()
-
                         firebaseAuth.currentUser?.let { curUser ->
+                            curUser.sendEmailVerification()
+
+                            val profileUpdates = UserProfileChangeRequest.Builder()
+                                .setDisplayName(userName)
+                                .build()
+
                             curUser.updateProfile(profileUpdates)
                                 .addOnFailureListener{ e ->
                                     Log.d("TAG_X", "USER NAME UPDATE ERROR -> ${e.localizedMessage}")
                                 }
                         }
 
+                        // upload saved profile photo to Firebase
                         uploadProfilePhoto()
                     }
 
@@ -189,6 +188,7 @@ class SignUpFragment : Fragment() {
                 if (it.isSuccessful) {
                     storageReference.downloadUrl.addOnCompleteListener { dlTask ->
                         if (dlTask.isSuccessful) {
+                            // update user profile with result photo uri
                             updateProfilePhoto(dlTask.result)
                         } else Log.e("TAG_X", "photo DOWNload error")
                     }
