@@ -87,4 +87,9 @@
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginBottom">16dp</item>
     </style>
+
+    <style name="Corner50" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>

@@ -1,15 +1,53 @@
 {
   "project_info": {
     "project_number": "859531998998",
+    "firebase_url": "https://biddingwars-5dc12-default-rtdb.firebaseio.com",
     "project_id": "biddingwars-5dc12",
     "storage_bucket": "biddingwars-5dc12.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:859531998998:android:6e1d8949fbd34c86ea4237",
+        "mobilesdk_app_id": "1:859531998998:android:afba11263b59b0ceea4237",
         "android_client_info": {
           "package_name": "com.aoinc.wknd6_a_biddingwars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "859531998998-8gh579flr7rml5igrqjjgkb1uvkd8nqn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aoinc.wknd6_a_biddingwars",
+            "certificate_hash": "8b2f4276fc5285c03317e38ad7fdb8622bf8608c"
+          }
+        },
+        {
+          "client_id": "859531998998-t2hnvuf6ks9oef1ld44oe74cm8a6jbta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvCZQ0yGKscUgvdoR4DywnGnPWNJk12_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859531998998-t2hnvuf6ks9oef1ld44oe74cm8a6jbta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859531998998:android:6e1d8949fbd34c86ea4237",
+        "android_client_info": {
+          "package_name": "om.aoinc.wknd6_a_biddingwars"
         }
       },
       "oauth_client": [
@@ -17,7 +55,7 @@
           "client_id": "859531998998-6q3caq0q1knjbbrvipp50ma8kat7d4oq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.aoinc.wknd6_a_biddingwars",
+            "package_name": "om.aoinc.wknd6_a_biddingwars",
             "certificate_hash": "8b2f4276fc5285c03317e38ad7fdb8622bf8608c"
           }
         },

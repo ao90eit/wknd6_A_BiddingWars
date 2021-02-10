@@ -191,7 +191,7 @@ class AddAuctionItemFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == CAMERA_REQUEST_CODE && data != null) {
+        if (requestCode == CAMERA_REQUEST_CODE) {
             // get temporary local photo for in-app display (sent to firebase on publish)
             photoBitmap = BitmapFactory.decodeFile(photoStoragePath)
             photoBitmap?.let {

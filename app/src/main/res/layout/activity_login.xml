@@ -7,6 +7,18 @@
     tools:context=".view.Login.LoginActivity"
     android:background="@color/off_white">
 
+    <com.google.android.material.imageview.ShapeableImageView
+        style="@style/ImageBase"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:src="@mipmap/ic_gavel_icon_round"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login_title_textView"
+        app:shapeAppearanceOverlay="@style/Corner50"
+        />
+
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/login_title_textView"
         style="@style/TitleTextView"

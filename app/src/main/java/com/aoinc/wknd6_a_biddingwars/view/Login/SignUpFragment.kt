@@ -108,20 +108,6 @@ class SignUpFragment : Fragment() {
         }
     }
 
-//    val user = Firebase.auth.currentUser
-//
-//    val profileUpdates = userProfileChangeRequest {
-//        displayName = "Jane Q. User"
-//        photoUri = Uri.parse("https://example.com/jane-q-user/profile.jpg")
-//    }
-//
-//    user!!.updateProfile(profileUpdates)
-//    .addOnCompleteListener { task ->
-//        if (task.isSuccessful) {
-//            Log.d(TAG, "User profile updated.")
-//        }
-//    }
-
     private fun createUser(userName: String, email: String, password: String) {
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {
@@ -212,7 +198,7 @@ class SignUpFragment : Fragment() {
     }
 
     private fun createTemporaryFile(): File? {
-        val tempName = "${firebaseAuth.currentUser?.uid}_${Date().time}"
+        val tempName = "temp_profile_${Date().time}"
         val tempDir = context?.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
 
         val imageFile = File.createTempFile(tempName, ".jpg", tempDir)
@@ -253,7 +239,8 @@ class SignUpFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == CAMERA_REQUEST_CODE && data != null) {
+        if (requestCode == CAMERA_REQUEST_CODE) {
+            
             // get temporary local photo for in-app display (sent to firebase on publish)
             photoBitmap = BitmapFactory.decodeFile(photoStoragePath)
             photoBitmap?.let {
