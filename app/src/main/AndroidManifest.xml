@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_gavel_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wknd6_A_BiddingWars">
-        <activity android:name=".view.MainNav.MainNavActivity"/>
-        <activity android:name=".view.Login.LoginActivity">
+        <activity android:name=".view.MainNav.MainNavActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".view.Login.LoginActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

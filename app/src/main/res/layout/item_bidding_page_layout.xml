@@ -107,6 +107,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/bid_amount_editText"
             style="@style/MoneyEditText"
+            android:imeOptions="actionDone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/bid_amount_hint"
